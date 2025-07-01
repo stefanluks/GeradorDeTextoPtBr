@@ -6,6 +6,8 @@ window.onload = () => {
     const btnGerar = document.getElementById('btnGerar');
     const btnCopiar = document.getElementById('btnCopiar');
     btnCopiar.hidden = true;
+    const btnClear = document.getElementById('btnClear');
+    btnClear.hidden = true;
     const inputNumParagrafos = document.getElementById('inputNumParagrafos');
     const inputNumPalavras = document.getElementById('inputNumPalavras');
     const resultado = document.getElementById('resultado');
@@ -27,4 +29,12 @@ window.onload = () => {
         alerta.mostrar();
         
     });
+    
+    btnClear.addEventListener('click', () => {
+        resultado.value = '';
+        btnCopiar.hidden = true;
+        let alerta = new Alerta('Texto limpo!', 'warning');
+        alerta.mostrar();
+    });
+
 }
