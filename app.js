@@ -18,6 +18,7 @@ window.onload = () => {
         texto = PALAVRAS.getText(numPragrafos, numPalavras);
         resultado.value = texto;
         btnCopiar.hidden = false;
+        btnClear.hidden = false;
         let alerta = new Alerta('Texto gerado com sucesso!', 'success');
         alerta.mostrar();
     });
@@ -27,12 +28,14 @@ window.onload = () => {
         document.execCommand('copy');
         let alerta = new Alerta('Texto copiado para a área de transferência!', 'info');
         alerta.mostrar();
-        
     });
     
     btnClear.addEventListener('click', () => {
         resultado.value = '';
         btnCopiar.hidden = true;
+        btnClear.hidden = true;
+        inputNumParagrafos.value = 2;
+        inputNumPalavras.value = 100;
         let alerta = new Alerta('Texto limpo!', 'warning');
         alerta.mostrar();
     });
