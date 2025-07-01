@@ -41,6 +41,9 @@ class Palavras {
                 let palavraAleatoria = this.splited[Math.floor(Math.random() * this.splited.length)];
                 paragrafo.push(palavraAleatoria);
             }
+            let inicial = paragrafo[0].charAt(0).toUpperCase();
+            paragrafo[0] = inicial + paragrafo[0].slice(1);
+            paragrafo[paragrafo.length - 1] += ".";
             texto += paragrafo.join(" ") + "\n\n";
         }
         return texto.trim();
